@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Podcast Page</title>
+	<link href= "js/bootstrap.css" rel="stylesheet" type="text/css"  media = "screen">
+	<link href= "css/style.css" rel="stylesheet" type="text/css"  media = "screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery-3.1.0.min.js"></script>
+	<script>
+		function Register() {
+   			var x;
+    		if (confirm("Are you sure you want to book tickets for this event?") == true) {
+        		x = alert("Tickets confirmed!");
+    		} else {
+       			x = alert("Tickets Cancelled!");
+    		}
+		}
+		
+		function RegisterOne() {
+   			var x;
+    		if (confirm("Are you sure you want to book tickets for this event?") == true) {
+        		x = alert("Tickets confirmed!");
+    		} else {
+       			x = alert("Tickets Cancelled!");
+    		}
+		}
+		
+		function RegisterTwo() {
+   			var x;
+    		if (confirm("Are you sure you want to book tickets for this event?") == true) {
+        		x = alert("Tickets confirmed!");
+    		} else {
+       			x = alert("Tickets Cancelled!");
+    		}
+		}
+		
+		var myVar = setInterval(myTimer, 1000);
+			function myTimer() {
+    			var d = new Date();
+    			document.getElementById("time").innerHTML = d.toLocaleTimeString();
+		}
+			
+		$(document).ready(function(){
+       			$("#time").animate({
+            		opacity: '0.5',
+            		height: '50px',
+            		width: '200px'
+   		 		});
+		});	
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  	<div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="firstpage.html">Home page</a></li>
+        <li><a href="eventlist.html">List Of Events</a></li>
+        <li><a href="forum.html">Forums</a></li>
+        <li class="active"><a href="podcast.html">Podcasts <span class="sr-only">(current)</span></a></li>
+        <li><a href="search.html">Database Search</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
+ 	</div><!-- /.container-fluid -->
+	</nav>
+	
+	<section class="container">
+    	<div class="row">
+			<div class="col-sm-12 text-center">
+				<div id = "eventlist">
+				<p class = "enter" id = "time"></p>
+				<div>
+				<h3 class = "sublist">LIVE PODCAST STREAMING</h3>
+				<section class = "forums">
+								<div>
+									<iframe class = "frames" src="https://www.youtube.com/embed/ZDAAEyuiXd0" allowfullscreen></iframe>
+									<p></p>
+									<div class = "space">Category - Autobiography</div>
+									<div class = "space">Author- Disney, Cricinfo</div>
+									<div class = "space">Maddison Square Garden</div>
+									<div class = "space">220, JS, Cleveroad</div>
+									<div class="btn-group" role="group" aria-label="...">
+  													<button class="visit" type="button">Visit Website</button>
+													<button onclick="Register()" class="order" type="button">Register</button>
+ 												 	<p><p>
+									</div>
+					</div>
+								<div>
+									<iframe class = "frames" src="https://www.youtube.com/embed/ELCMGpOetjY" allowfullscreen></iframe>
+									<p></p>
+									<div class = "space">Category - Autobiography</div>
+									<div class = "space">Author- Sachin Ramesh Tendulkar, Boria Majumdar</div>
+									<div class = "space">BCCI, MCC Stadium</div>
+									<div class = "space">INDIA</div>
+									<div class="btn-group" role="group" aria-label="...">
+  													<button class="visit" type="button">Visit Website</button>
+													<button onclick="RegisterOne()" class="order" type="button">Register</button>
+ 												 	<p><p>
+									</div>
+					</div>
+					
+								<div>
+									<iframe class = "frames" src="https://www.youtube.com/embed/yUofDfhaIMM" allowfullscreen></iframe>
+									<p></p>
+									<div class = "space">Category - Science & Technology</div>
+									<div class = "space">Authors: Mitchell Moffit, Gregory Brown</div>
+									<div class = "space">March 17, at 7:15 pm EST.</div>
+									<div class="btn-group" role="group" aria-label="...">
+  													<button class="visit" type="button">Visit Website</button>
+													<button onclick="RegisterTwo()" class="order" type="button">Register</button>
+									</div>
+					</div>
+				<p></p>
+			</section>
+			</div>
+			</div>
+			</div>
+		</div>
+	</section>
+	<div class="container">
+    					<div class="row">
+							<div class="col-sm-12 text-center">
+								<footer class = "enter">
+									<!--#include file="footer.shtml"-->
+								</footer>
+							</div>
+						</div>
+			</div>
+	<ul>
+		<li class="back"><a class = "backcolor" href="firstpage.html">Back</a></li>
+	</ul>
+</body>
+</html>

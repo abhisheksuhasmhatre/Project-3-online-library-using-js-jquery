@@ -1,0 +1,7 @@
+AuthType shibboleth
+AuthName "RIT"
+ShibRequireSession On
+SSLRequireSSL
+require valid-user
+
+ErrorDocument 404 /asm1610/645/project3/contact/error.html

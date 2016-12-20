@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Contact Us</title>
+	<link href= "../js/bootstrap.css" rel="stylesheet" type="text/css"  media = "screen">
+	<link href= "../css/style.css" rel="stylesheet" type="text/css"  media = "screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../jquery-3.1.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../js/jquery.slides.min.js"></script>
+	<script>
+		var myVar = setInterval(myTimer, 1000);
+			function myTimer() {
+    			var d = new Date();
+    			document.getElementById("time").innerHTML = d.toLocaleTimeString();
+		}
+		
+		$(document).ready(function(){
+       			$("#time").animate({
+            		opacity: '0.5',
+            		height: '50px',
+            		width: '200px'
+   		 		});
+		});
+	</script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  	<div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="contactus.html">Contact Us<span class="sr-only">(current)</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../firstpage.html">Home Page</a></li>
+      </ul>
+ 	</div><!-- /.container-fluid -->
+	</nav>
+	<form method="post" action="https://people.rit.edu/asm1610/645/exercises/formmail/formmail.php" name="SampleForm">
+    <input type="hidden" name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
+
+    <!-- STEP 2: Put your email address in the 'recipients' value.
+                 Note that you also have to allow this email address in the
+                 $TARGET_EMAIL setting within formmail.php!
+    -->
+    <input type="hidden" name="recipients" value="asm1610@g.rit.edu" />
+
+    <!-- STEP 3: Specify required fields in the 'required' value - or leave unchanged.
+            NOTE: DO NOT put your email address and name here.
+            "Your email address" and "Your name" are error messages for your users to see,
+            not placeholders for you to replace.
+    -->
+    <input type="hidden" name="required" value="EmailAddr:Your email address,FullName:Your name" />
+
+    <!-- STEP 4: Put your subject line in the 'subject' value. -->
+    <input type="hidden" name="subject" value="Sample FormMail Testing" />
+
+    <!-- ALL DONE! Visit our site for HOW TO guides and more complex features. -->
+
+    <!-- this derives (creates) "email" and "realname" special fields from the input fields -->
+    <input type="hidden" name="derive_fields" value="email=EmailAddr,realname=FullName" />
+
+    <!-- this excludes the "email" and "realname" special fields from the body of the email you receive -->
+    <input type="hidden" name="mail_options" value="Exclude=email;realname" />
+	
+	<section class="container">
+    	<div class="row">
+				<div id = "eventlist">
+				<p class = "enter" id = "time"></p>
+					<h3 class = "sublist">CONTACT US</h3>
+					<p><p>
+						Please enter your name: &emsp;&emsp;&emsp;&emsp;&emsp;
+						<input type="text" name="FullName" /><br>
+						Please enter your email address: &nbsp;
+						<input type="text" name="EmailAddr" /><br>
+						Please enter your email address: &nbsp;
+						Yes <input type="radio" name="contact" value="Y" checked="checked" />
+            			No <input type="radio" name="contact" value="N" /><br>
+            			Please enter your message: &emsp;&emsp;&emsp;
+            			<textarea name="mesg" rows="10" cols="50"></textarea><br>
+            			<input type="submit" value="Submit" />
+				</div>
+		</div>
+	</section>
+</form>
+<ul>
+	<li class="back"><a class = "backcolor" href="../firstpage.html">Back</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Forum Page</title>
+	<link href= "js/bootstrap.css" rel="stylesheet" type="text/css"  media = "screen">
+	<link href= "css/style.css" rel="stylesheet" type="text/css"  media = "screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+        "use strict";
+        $(document).ready(function(){
+        	 $("#forum").on("click", function(e){
+                $("#podcast").hide();
+                $("#evenlist").fadeIn();
+                $("#stream").removeClass("selected");
+                $("#forum").addClass("selected");
+            });
+            
+            $("#stream").on("click", function(e){
+                $("#evenlist").hide();
+                $("#podcast").fadeIn();
+                $("#forum").removeClass("selected");
+                $("#stream").addClass("selected");
+            });
+        });
+        
+        function Register() {
+   			var x;
+    		if (confirm("Are you sure you want to book tickets for this event?") == true) {
+        		x = alert("Tickets confirmed!");
+    		} else {
+       			x = alert("Tickets Cancelled!");
+    		}
+		}
+		
+		function RegisterOne() {
+   			var x;
+    		if (confirm("Are you sure you want to book tickets for this event?") == true) {
+        		x = alert("Tickets confirmed!");
+    		} else {
+       			x = alert("Tickets Cancelled!");
+    		}
+		}
+		
+		function RegisterTwo() {
+   			var x;
+    		if (confirm("Are you sure you want to book tickets for this event?") == true) {
+        		x = alert("Tickets confirmed!");
+    		} else {
+       			x = alert("Tickets Cancelled!");
+    		}
+		}
+		
+		function move() {
+  				var elem = document.getElementById("bar");   
+  				var width = 10;
+  				var id = setInterval(frame, 10);
+  				function frame() {
+    				if (width >= 100) {
+      					clearInterval(id);
+      					alert("Reviews posted!!");
+    				} else {
+      					width++; 
+      					elem.style.width = width + '%'; 
+      					document.getElementById("label").innerHTML = width * 1  + '%';
+    				}
+ 				}
+			}
+			
+			function movebar() {
+  				var elem = document.getElementById("pgbar");   
+  				var width = 10;
+  				var id = setInterval(frame, 10);
+  				function frame() {
+    				if (width >= 100) {
+      					clearInterval(id);
+      					alert("Reviews posted!!");
+    				} else {
+      					width++; 
+      					elem.style.width = width + '%'; 
+      					document.getElementById("labelbar").innerHTML = width * 1  + '%';
+    				}
+ 				}
+			}
+			
+			function movebarOne() {
+  				var elem = document.getElementById("progbar");   
+  				var width = 10;
+  				var id = setInterval(frame, 10);
+  				function frame() {
+    				if (width >= 100) {
+      					clearInterval(id);
+      					alert("Reviews posted!!");
+    				} else {
+      					width++; 
+      					elem.style.width = width + '%'; 
+      					document.getElementById("labelprog").innerHTML = width * 1  + '%';
+    				}
+ 				}
+			}
+    </script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  	<div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="firstpage.html">Home page</a></li>
+        <li><a href="eventlist.html">List Of Events</a></li>
+        <li class="active"><a href="forum.html">Forums <span class="sr-only">(current)</span></a></li>
+        <li><a href="podcast.html">Podcasts <span class="sr-only">(current)</span></a></li>
+        <li><a href="search.html">Database Search</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
+ 	</div><!-- /.container-fluid -->
+	</nav>
+	<section class="container">
+    	<div class="row">
+			<div class="col-sm-12 text-center">
+				<ul id="sub">
+        			<li class = "block"><a href="#" class="selected" id="forum">LIST OF FORUMS</a></li>
+     			    <li class = "block"><a href="#" id="stream">LIVE PODCAST STREAMING</a></li>
+  			   </ul>
+  			</div>
+  		</div> 
+	</section>
+	<!-- forums -->
+	<section id = "content">
+		<section class="container">
+    		<div class="row">
+				<div class="col-sm-12 text-center">
+					<div id = "evenlist">
+					<h3 class = "sublist">LIST OF FORUMS</h3>
+					<div class = "forums">
+					<h4 class = "bold">Reviews and Discussions about Specific Books and Series</h4>
+					These forums are for discussion of specific books. Feel free to post a review of a book you already read,
+					or to ask about a specific book of interest that you did not read. You can also read more reviews at the book review page of OnlineBookClub.org. 
+					If you are an author or publisher, you can't post in this forum about your book, but--even better--you can get your book or ebook reviewed.
+				</div>
+				<h4 class = "subbold">Sub-forums</h4>
+				<div class = "forums">Classic Books, Non-Fiction Books, Crime, Thrillers, Mystery and Horror Books, 
+				Sci-Fi and Fantasy Books, Romance and Erotic Books,</div>
+				<div class = "forums">Historical Fiction, Drama and Poetry Books, NEW: Graphic Novels and Comic Books, 
+				Young Adult Fiction Books, Children's Books, Other Fiction Forum</div>
+    				<input class = "name" type="text" placeholder="Enter Your Name">
+    				<div>
+    					<input class = "name" type="text" placeholder="Enter Forum Name">
+    				</div>
+    				<div>
+    					<input class = "name" type="text" placeholder="Enter Reviews">
+    				</div>
+    				<div>
+    					<textarea>Type here</textarea>
+    				</div>
+    				<div class="btn-group" role="group" aria-label="...">
+  									<button onclick = "move()" class="enter" type="button">Post</button>
+									<button class="cancel" type="button">Cancel</button>
+					</div>
+					<div id="progress">
+  						<div id="bar">
+    						<div id="label">10%</div>
+  						</div>
+					</div>
+				<p></p>
+				<div class = "forums">
+					<h4 class = "bold">Discuss Authors</h4>
+					This forum is for discussion about authors. You can discuss specific authors, types of authors, groups of authors, 
+					or any other topics related to authors.
+					<h4 class = "bold">Related Special Forums:</h4>
+					Author Articles | Author Interviews
+					If you are an author or writer looking to discuss writing and author-related issues, please use our writing forums instead.
+				</div>
+    				<input class = "name" type="text" placeholder="Enter Your Name">
+    				<div>
+    					<input class = "name" type="text" placeholder="Enter Author's Name">
+    				</div>
+    				<div>
+    					<input class = "name" type="text" placeholder="Enter Reviews">
+    				</div>
+    				<div>
+    					<textarea>Type here</textarea>
+    				</div>
+    				<div class="btn-group" role="group" aria-label="...">
+  									<button onclick = "movebar()" class="enter" type="button">Post</button>
+									<button class="cancel" type="button">Cancel</button>
+					</div>
+					<div id="progressbar">
+  						<div id="pgbar">
+    						<div id="labelbar">10%</div>
+  						</div>
+					</div>
+				<div class = "forums">
+					<h4 class = "bold">E-Books and E-Readers</h4>
+					If you are an author or writer looking to discuss writing and author-related issues, please use our writing forums instead.
+					<h4 class = "bold">Sub Forums:</h4>
+					Nook Discussion and Support, Kindle Discussion and Support
+				</div>
+    				<input class = "name" type="text" placeholder="Enter Your Name">
+    				<div>
+    					<input class = "name" type="text" placeholder="Enter Forum Name">
+    				</div>
+    				<div>
+    					<input class = "name" type="text" placeholder="Enter Reviews">
+    				</div>
+    				<div>
+    					<textarea>Type here</textarea>
+    				</div>
+    				<div class="btn-group" role="group" aria-label="...">
+  									<button onclick = "movebarOne()" class="enter" type="button">Post</button>
+									<button class="cancel" type="button">Cancel</button>
+					</div>
+					<div id="progressbr">
+  						<div id="progbar">
+    						<div id="labelprog">10%</div>
+  						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- podcasts -->
+	
+	<section id = "podcast">
+			<section class="container">
+    		<div class="row">
+			<div class="col-sm-8 text-center">
+				<div id = "eventlist">
+				<div>
+				<h3 id = "sublist">LIVE PODCAST STREAMING</h3>
+				<section class = "forums">
+								<div>
+									<iframe class = "frame" src="https://www.youtube.com/embed/ZDAAEyuiXd0" allowfullscreen></iframe>
+									<p></p>
+									<div class = "spacef">Category - Autobiography</div>
+									<div class = "spacef">Author- Disney, Cricinfo</div>
+									<div class = "spacef">Maddison Square Garden</div>
+									<div class = "spacef">220, JS, Cleveroad</div>
+									<div class="btn-group" role="group" aria-label="...">
+  													<button class="visitpg" type="button">Visit Website</button>
+													<button onclick="Register()" class="orderbk" type="button">Register</button>
+ 												 	<p><p>
+									</div>
+					</div>
+								<div>
+									<iframe class = "frame" src="https://www.youtube.com/embed/ELCMGpOetjY" allowfullscreen></iframe>
+									<p></p>
+									<div class = "spacef">Category - Autobiography</div>
+									<div class = "spacef">Author- Sachin Ramesh Tendulkar, Boria Majumdar</div>
+									<div class = "spacef">BCCI, MCC Stadium</div>
+									<div class = "spacef">INDIA</div>
+									<div class="btn-group" role="group" aria-label="...">
+  													<button class="visitpg" type="button">Visit Website</button>
+													<button onclick="RegisterOne()" class="orderbk" type="button">Register</button>
+ 												 	<p><p>
+									</div>
+					</div>
+								<div>
+									<iframe class = "frame" src="https://www.youtube.com/embed/yUofDfhaIMM" allowfullscreen></iframe>
+									<p></p>
+									<div class = "spacef">Category - Science & Technology</div>
+									<div class = "spacef">Authors: Mitchell Moffit, Gregory Brown</div>
+									<div class = "spacef">March 17, at 7:15 pm EST.</div>
+									<div class="btn-group" role="group" aria-label="...">
+  													<button class="visitpg" type="button">Visit Website</button>
+													<button onclick="RegisterTwo()" class="orderbk" type="button">Register</button>
+									</div>
+								</div>
+				<p></p>
+			</section>
+			</div>
+			</div>
+			</div>
+		</div>
+	</section>
+	</section>
+	</section>
+	<div class="container">
+    					<div class="row">
+							<div class="col-sm-12 text-center">
+								<footer class = "enter">
+									<!--#include file="footer.shtml"-->
+								</footer>
+							</div>
+						</div>
+			</div>
+	<ul>
+		<li class="back"><a class = "backcolor" href="firstpage.html">Back</a></li>
+	</ul>
+</body>
+</html>

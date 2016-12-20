@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>First Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href= "js/bootstrap.css" rel="stylesheet" type="text/css"  media = "screen">
+	<link href= "css/style.css" rel="stylesheet" type="text/css"  media = "screen">
+	<script src="jquery-3.1.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+        		$("#hide").click(function(){
+        		$("#hidedata").hide(1000);
+    				});
+        		$("#show").click(function(){
+       				$("#hidedata").show("slow");
+   				});
+    		});
+    		
+    		var myVar = setInterval(myTimer, 1000);
+			function myTimer() {
+    			var d = new Date();
+    			document.getElementById("time").innerHTML = d.toLocaleTimeString();
+			}
+			
+				$(document).ready(function(){
+       				$("#time").animate({
+            			opacity: '0.5',
+            			height: '50px',
+            			width: '200px'
+   		 			});
+			});
+			
+			function move() {
+  				var elem = document.getElementById("bar");   
+  				var width = 10;
+  				var id = setInterval(frame, 10);
+  				function frame() {
+    				if (width >= 100) {
+      					clearInterval(id);
+      					alert("Search Complete");
+    				} else {
+      					width++; 
+      					elem.style.width = width + '%'; 
+      					document.getElementById("label").innerHTML = width * 1  + '%';
+    				}
+ 				}
+			}
+			
+			function movebar() {
+  				var elem = document.getElementById("pgbar");   
+  				var width = 10;
+  				var id = setInterval(frame, 10);
+  				function frame() {
+    				if (width >= 100) {
+      					clearInterval(id);
+      					alert("Search Complete");
+    				} else {
+      					width++; 
+      					elem.style.width = width + '%'; 
+      					document.getElementById("labelbar").innerHTML = width * 1  + '%';
+    				}
+ 				}
+			}
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  	<div class="container-fluid">    
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="firstpage.html">Home page <span class="sr-only">(current)</span></a></li>
+        <li><a href="eventlist.html">List Of Events</a></li>
+        <li><a href="forum.html">Forums</a></li>
+        <li><a href="podcast.html">Podcasts</a></li>
+        <li><a href="search.html">Database Search</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
+    
+ 	</div><!-- /.container-fluid -->
+	</nav>
+	
+	<header class="container">
+	<p class = "enter" id = "time"></p>
+    <div class="row">
+		<div class="col-sm-4 text-center">
+    		<h3>BOOK LAUNCH</h3>
+    		<h4 class = "search">LIST OF EVENTS</h4>
+    					<section id = "box">
+			<div class="month">
+  				<ul>
+    				<li class="prev">❮</li>
+    				<li class="next">❯</li>
+    				<li>
+      					FEBRUARY<br>
+      					<span>2016</span>
+    				</li>
+  				</ul>
+			</div>
+
+			<ul class="week">
+  				<li>Mo</li>
+  				<li>Tu</li>
+  				<li>We</li>
+  				<li>Th</li>
+  				<li>Fr</li>
+  				<li>Sa</li>
+  				<li>Su</li>
+			</ul>
+
+			<ul class="days">
+  				<li>1</li>
+  				<li>2</li>
+  				<li>3</li>
+  				<li>4</li>
+ 				<li>5</li>
+  				<li>6</li>
+  				<li>7</li>
+  				<li>8</li>
+  				<li>9</li>
+  				<li>10</li>
+  				<li><span class="active">11</span></li>
+  				<li>12</li>
+  				<li>13</li>
+  				<li>14</li>
+  				<li>15</li>
+  				<li>16</li>
+  				<li>17</li>
+  				<li>18</li>
+  				<li>19</li>
+  				<li>20</li>
+  				<li>21</li>
+  				<li>22</li>
+  				<li>23</li>
+  				<li>24</li>
+  				<li>25</li>
+  				<li>26</li>
+  				<li>27</li>
+  				<li>28</li>
+			</ul>
+			</section>
+			<div>
+				<div id = "event">
+					<div>Practical and Experimental ROBOTICS</div>
+					<div>Author- Sahin, Kachroo</div>
+					<div>Maddison Square Garden</div>
+					<div>220, JS, Cleveroad</div>
+					<div>Thursday, Nov 5, 2016</div>
+					<div>Entry Fee: $20/-</div>
+					<div>From 2:00Pm - 5:00PM</div>
+					<br>
+					<section id = "hidedata">
+					<div>TimeLess Steel</div>
+					<div>Author- Disney, Cricinfo</div>
+					<div>Maddison Square Garden</div>
+					<div>220, JS, Cleveroad</div>
+					<div>Thursday, Nov 15, 2016</div>
+					<div>Entry Fee: $20/-</div>
+					<div>From 1:00Pm - 5:00PM</div>
+					</section>
+					<button class = "enter" id="show">Show</button>
+					<button id = "hide" class = "cancel">Hide</button>
+					<br>
+				</div>
+				<ul class = "move">
+						<li>press here -> <a class = "act" href="eventlist.html">Show More</a></li>
+				</ul>
+			</div>
+    	</div>
+    	<div class="col-sm-4 text-center">
+    	<div id = "move"> 
+    		<h3>SEARCH</h3>
+    		<h4 class = "search">DATABASE SEARCH</h4>
+    		<section>
+				<p></p>
+				
+				<!-- change id of buttons-->
+
+				<div class="input-group">
+ 					<span class="input-group-addon" id="basic-addon4">Enter Book's Name</span>
+ 			 		<input type="text" class="form-control" placeholder="Enter Book's Name" aria-describedby="basic-addon1">
+				</div>
+    			<div class="input-group">
+    				<span class="input-group-addon" id="basic-addon2">Enter Genre</span>
+ 			 		<input type="text" class="form-control" placeholder="Enter Genre" aria-describedby="basic-addon1">
+    			</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon3">Enter Author's Name</span>
+ 			 		<input type="text" class="form-control" placeholder="Enter Author's Name (Optional)" aria-describedby="basic-addon1">
+    			</div>
+    			<div class="btn-group" role="group" aria-label="...">
+  								<button onclick = "move()" class="enter" type="button">Enter</button>
+								<button class="cancel" type="button">Reset</button>
+				</div>
+				<div id="progress">
+  					<div id="bar">
+    					<div id="label">10%</div>
+  					</div>
+				</div>
+				<ul class = "move">
+					<li>press here -> <a class = "act" href="search.html">Show More</a></li>
+				</ul>
+				<h4 class = "searchweb">ONLINE WEB SEARCH</h4>
+				<p></p>
+				<div class="input-group">
+    				<span class="input-group-addon" id="basic-addon1">Enter to search</span>
+ 			 		<input type="text" class="form-control" placeholder="Enter to search on web" aria-describedby="basic-addon1">
+    			</div>
+    			<div class="btn-group" role="group" aria-label="...">
+  								<button onclick = "movebar()" class="enter" type="button">Enter</button>
+								<button class="cancel" type="button">Reset</button>
+				</div>
+				<div id="progressbar">
+  					<div id="pgbar">
+    					<div id="labelbar">10%</div>
+  					</div>
+				</div>
+			</section>
+    	</div>
+    	</div>
+    	<div class="col-sm-4 text-center">
+    		<h3>FORUMS</h3>
+    		<h4 class = "search">SUB-FORUMS</h4>
+    		<section>
+				<div class = "forums">Classic Books, Non-Fiction Books, Crime, Thrillers, Mystery and Horror Books, Sci-Fi and Fantasy Books, 
+				Romance and Erotic Books,Historical Fiction, Drama and Poetry Books, NEW: Graphic Novels and Comic Books, Young Adult Fiction Books, 
+				Children's Books, Other Fiction Forum</div>
+			</section>
+			<ul class = "move">
+				<li>press here -> <a class = "act" href="forum.html">Show More</a></li>
+			</ul>
+			<h4 class = "podcast">PODCAST</h4>
+			<section class = "forums">
+				<a class = "act" href="https://www.youtube.com/watch?v=ZDAAEyuiXd0" target="_blank">TimeLess Steel</a>
+				<div>Author- Disney, Cricinfo</div>
+				<div>Maddison Square Garden</div>
+				<div>220, JS, Cleveroad</div>
+				<p></p>
+				<a class = "act" href="https://www.youtube.com/watch?v=ZDAAEyuiXd0" target="_blank">Playing it My Way</a>
+				<div>Author- Sachin Ramesh Tendulkar, Boria Majumdar</div>
+				<div>BCCI, MCC Stadium</div>
+				<div>INDIA</div>
+			</section>
+			<ul class = "move">
+				<li>press here -> <a class = "act" href="podcast.html">Show More</a></li>
+			</ul>
+    	</div>
+     </div>
+  </header>
+  <header class = "container">
+  	<div class="row">
+		<div class="col-sm-12 text-center">
+			<h4 class = "about">ABOUT US</h4>
+			<div class = "forums">Online Library is an initiative of the Internet Archive, non-profit, building a digital library of Internet sites.</div>
+		<div class = "forums">Licensed under owner of the site - Abhishek Suhas Mhatre otherwise noted. Notify me about copyright concerns</div>
+		<div class = "forums">
+			Contact us @ asm1610@g.rit.edu
+			<form action = "contact/contactus.html">
+    			<div class="btn-group" role="group" aria-label="...">
+    				<div class="container">
+    					<div class="row">
+							<div class="col-sm-6 text-center">
+    							<input type = "submit" class = "contact" value = "Contact Us"/>
+ 							 </div>
+ 						</div>
+ 					</div>
+				</div>
+			</form>
+		</div>
+		<div class = "forums">
+			Your use of this Online Library is subject to this terms and Conditions<br>
+			<div class="btn-group" role="group" aria-label="...">
+				<div class="container">
+    				<div class="row">
+						<div class="col-sm-6 text-center">
+  							<input type = "submit" class = "contact" value = "Terms"/>
+ 						 </div>
+ 					</div>
+ 				</div>
+			</div>
+		</div>
+		<div class = "forums">
+			Documentation of the entire website
+			<form action = "resources.html">
+    			<div class="btn-group" role="group" aria-label="...">
+    				<div class="container">
+    					<div class="row">
+							<div class="col-sm-6 text-center">
+    								<input type = "submit" class = "contact" value = "Resources"/>
+ 							 </div>
+ 						</div>
+ 					</div>
+				</div>
+			</form>
+		</div>
+		</div>
+	</div>
+  </header>
+  			<div class="container">
+    					<div class="row">
+							<div class="col-sm-12 text-center">
+								<footer class = "enter">
+									<!--#include file="footer.shtml"-->
+								</footer>
+							</div>
+						</div>
+			</div>
+</body>
+</html>

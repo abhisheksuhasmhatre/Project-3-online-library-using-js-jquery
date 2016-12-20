@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Search Page</title>
+	<link href= "js/bootstrap.css" rel="stylesheet" type="text/css"  media = "screen">
+	<link href= "css/style.css" rel="stylesheet" type="text/css"  media = "screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery-3.1.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/jquery.slides.min.js"></script>
+	<script>
+		"use strict";
+       	var captions = ["INTRODUCTION", "HISTORY", "REFERENCE"];
+       	$(document).ready(function(){
+           $(".slide").slidesjs({
+              width:1002,
+              height: 1200,
+              pagination:
+               {
+                   active:false
+               },
+               callback:
+               {
+                 complete:updateCaption  
+               },
+               effect:
+               {
+                   slide:
+                   {
+                       speed:1000
+                   }
+               }
+           });
+       });
+       
+       function updateCaption(num){
+           var tag= captions[num - 1];
+           $("#description").hide().text(tag).fadeIn();
+       }
+       
+       	var captionsOne = ["INTRODUCTION", "REFERENCE"];
+       	$(document).ready(function(){
+           $(".slideOne").slidesjs({
+              width:1002,
+              height: 1200,
+              pagination:
+               {
+                   active:false
+               },
+               callback:
+               {
+                 complete:updateCaptionOne
+               },
+               effect:
+               {
+                   slide:
+                   {
+                       speed:1000
+                   }
+               }
+           });
+       });
+       
+       function updateCaptionOne(num){
+           var tagOne= captionsOne[num - 1];
+           $("#descriptionOne").hide().text(tagOne).fadeIn();
+       }
+       
+       var captionsTwo = ["INTRODUCTION", "REFERENCE"];
+       	$(document).ready(function(){
+           $(".slideTwo").slidesjs({
+              width:1002,
+              height: 1200,
+              pagination:
+               {
+                   active:false
+               },
+               callback:
+               {
+                 complete:updateCaptionTwo
+               },
+               effect:
+               {
+                   slide:
+                   {
+                       speed:1000
+                   }
+               }
+           });
+       });
+       
+       function updateCaptionTwo(num){
+           var tagTwo= captionsTwo[num - 1];
+           $("#descriptionTwo").hide().text(tagTwo).fadeIn();
+       }
+       
+       var captionsThree = ["INTRODUCTION", "REFERENCE"];
+       	$(document).ready(function(){
+           $(".slideThree").slidesjs({
+              width:1002,
+              height: 1200,
+              pagination:
+               {
+                   active:false
+               },
+               callback:
+               {
+                 complete:updateCaptionThree
+               },
+               effect:
+               {
+                   slide:
+                   {
+                       speed:1000
+                   }
+               }
+           });
+       });
+       
+       function updateCaptionThree(num){
+           var tagThree= captionsThree[num - 1];
+           $("#descriptionThree").hide().text(tagThree).fadeIn();
+       }
+       
+       function Order() {
+   			var x;
+    		if (confirm("Are you sure you want to order this paper on Eye Tracking in Human–Computer?") == true) {
+        		x = alert("Your order has been placed!");
+    		} else {
+       			x = alert("Your order has been Cancelled!");
+    		}
+		}
+		
+		function OrderOne() {
+   			var x;
+    		if (confirm("Are you sure you want to order this paper on Inferring Visualization Task Properties, User Performance, and User?") == true) {
+        		x = alert("Your order has been placed!");
+    		} else {
+       			x = alert("Your order has been Cancelled!");
+    		}
+		}
+		
+		function OrderTwo() {
+   			var x;
+    		if (confirm("Are you sure you want to order this paper on Estimation of Certainty for Responses to Multiple-Choice?") == true) {
+        		x = alert("Your order has been placed!");
+    		} else {
+       			x = alert("Your order has been Cancelled!");
+    		}
+		}
+		
+		function OrderThree() {
+   			var x;
+    		if (confirm("Are you sure you want to order this paper on Eye Metrics for Task-Dependent Automation?") == true) {
+        		x = alert("Your order has been placed!");
+    		} else {
+       			x = alert("Your order has been Cancelled!");
+    		}
+		}
+		
+		var myVar = setInterval(myTimer, 1000);
+			function myTimer() {
+    			var d = new Date();
+    			document.getElementById("time").innerHTML = d.toLocaleTimeString();
+		}
+		
+		$(document).ready(function(){
+       			$("#time").animate({
+            		opacity: '0.5',
+            		height: '50px',
+            		width: '200px'
+   		 		});
+		});
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  	<div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="firstpage.html">Home page</a></li>
+        <li><a href="eventlist.html">List Of Events</a></li>
+        <li><a href="forum.html">Forums</a></li>
+        <li><a href="podcast.html">Podcasts</a></li>
+        <li class="active"><a href="search.html">Database Search <span class="sr-only">(current)</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
+ 	</div><!-- /.container-fluid -->
+ 	
+ 	<section class="container">
+    	<div class="row">
+			<div class="col-sm-12 text-center">
+				<div id = "eventlist">
+				<p class = "enter" id = "time"></p>
+					<div>
+						<h3 class = "sublist">DATABASE SEARCH</h3>
+						<section class = "forums">
+							<div class = "track">
+								<b class = "spacetrack">Searches>Engineering>HCI>ACM>Papers on eye tracker</b>
+							</div>
+							<figure class = "slide">
+								<img class = "img" src="media/Screen%20Shot%202016-11-08%20at%209.08.05%20PM.png" alt="INTRODUCTION">
+								<img class = "img" src="media/Screen%20Shot%202016-11-08%20at%209.08.33%20PM.png" alt="HISTORY">
+								<img class = "img" src="media/Screen%20Shot%202016-11-08%20at%209.08.58%20PM.png" alt="REFERENCE">
+							</figure>
+							<p><p>
+						
+										<div class = "space" id="description">INTRODUCTION</div>
+										<div class = "space">Eye Tracking in Human–Computer</div>
+										<div class = "space">Interaction and Usability Research:</div>
+										<div class = "space">Ready to Deliver the Promises</div>
+										<div class = "space">Robert J. K. Jacob and Keith S. Karn</div>
+										<div class = "space">
+											<a class = "color" href="media/10.1.1.100.445.pdf" target="_blank">Paper On Eyetracker</a>
+							
+							</div>
+							<div class="btn-group" role="group" aria-label="...">
+  										<button class="visitds" type="button">Visit Website</button>
+										<button onclick="Order()" class="orderds" type="button">Order Now</button>
+							</div>
+							<p></p>
+							<figure class = "slideOne">
+								<img class = "img" src="media/Screen%20Shot%202016-11-08%20at%209.51.06%20PM.png" alt="INTRODUCTION">
+								<img class = "img" src="media/Screen%20Shot%202016-11-08%20at%209.51.34%20PM.png" alt="REFERENCE">
+							</figure>
+							<p></p>
+						
+							<div class = "space" id="descriptionOne">INTRODUCTION</div>
+							<div class = "space">Inferring Visualization Task Properties, User Performance, and User</div>
+							<div class = "space">Cognitive Abilities from Eye Gaze Data</div>
+							<div class = "space">BEN STEICHEN, CRISTINA CONATI, and GIUSEPPE CARENINI</div>
+							<div class = "space">
+								<a class = "color" href="media/a11-steichen.pdf" target="_blank">Paper On Eyetracker</a>
+						
+							</div>
+							<div class="btn-group" role="group" aria-label="...">
+  										<button class="visitds" type="button">Visit Website</button>
+										<button onclick="OrderOne()" class="orderds" type="button">Order Now</button>
+							</div>
+							<p></p>
+							<figure class = "slideTwo">
+								<img class = "img" src="media/Screen%20Shot%202016-11-08%20at%209.52.26%20PM.png" alt="INTRODUCTION">
+								<img class = "img" src="media/Screen%20Shot%202016-11-08%20at%209.53.03%20PM.png" alt="REFERENCE">
+							</figure>
+							<p></p>
+							
+							<div class = "space" id="descriptionTwo">INTRODUCTION</div>
+							<div class = "space">Estimation of Certainty for Responses to Multiple-Choice</div>
+							<div class = "space">Questionnaires Using Eye Movements</div>
+							<div class = "space">MINORU NAKAYAMA and YOSIYUKI TAKAHASI</div>
+							<div class = "space">
+								<a class = "color" href="media/a14-nakayama.pdf" target="_blank">Paper On Eyetracker</a>
+						
+							</div>
+							<div class="btn-group" role="group" aria-label="...">
+  										<button class="visitds" type="button">Visit Website</button>
+										<button onclick="OrderTwo()" class="orderds" type="button">Order Now</button>
+							</div>
+							<p></p>
+							<figure class = "slideThree">
+								<img class = "img" src="media/Screen%20Shot%202016-11-08%20at%209.58.38%20PM.png" alt="INTRODUCTION">
+								<img class = "img" src="media/Screen%20Shot%202016-11-08%20at%209.58.49%20PM.png" alt="SREFERENCE">
+							</figure>
+							<p></p>
+						
+							<div class = "space" id="descriptionThree">INTRODUCTION</div>
+							<div class = "space">Eye Metrics for Task-Dependent Automation</div>
+							<div class = "space">Puck Imants and Tjerk de Greef</div>
+							<div class = "space">
+								<a class = "color" href="media/a19-Imants.pdf" target="_blank">Paper On Eyetracker</a>
+							
+							</div>
+							<div class="btn-group" role="group" aria-label="...">
+
+  										<button class="visitds" type="button">Visit Website</button>
+										<button onclick="OrderThree()" class="orderds" type="button">Order Now</button>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</nav>
+	<div class="container">
+    					<div class="row">
+							<div class="col-sm-12 text-center">
+								<footer class = "enter">
+									<!--#include file="footer.shtml"-->
+								</footer>
+							</div>
+						</div>
+			</div>
+	<ul>
+		<li class="back"><a class = "backcolor" href="firstpage.html">Back</a></li>
+	</ul>
+</body>
+</html>

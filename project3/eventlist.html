@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>EventList Page</title>
+	<link href= "js/bootstrap.css" rel="stylesheet" type="text/css"  media = "screen">
+	<link href= "css/style.css" rel="stylesheet" type="text/css"  media = "screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery-3.1.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		"use strict";
+        $(document).ready(function(){
+            $("img").on("click", function(e){
+                console.log("clicked"); 
+                var lightbox = document.createElement("div");
+                lightbox.style.position = "fixed";
+                lightbox.style.height = "100%";
+                lightbox.style.width = "100%";
+                lightbox.style.left = 0;
+                lightbox.style.top = 0;
+                lightbox.style.backgroundColor="rgba(0,0,0,0.7)";
+                lightbox.style.display="none";
+                var popout= document.createElement("img");
+                popout.src= e.target.src;
+                
+                popout.onload=function(){
+                   popout.style.position = "absolute";
+                   var diffWidth=$(window).width() / 2 - popout.width/2;
+                   var diffHeight=$(window).height() / 2 - popout.height/2;
+                    popout.style.left= diffWidth + "px";
+                    popout.style.top= diffHeight + "px";
+                    document.body.appendChild(lightbox);
+                    lightbox.appendChild(popout);
+                    $(lightbox).fadeIn(200);
+                };
+
+                lightbox.addEventListener("click", function(e){
+                    $(lightbox).fadeOut(200, function(){
+                       lightbox.remove(); 
+                    });
+                });                
+            });
+        });
+        
+		function Order() {
+   			var x;
+    		if (confirm("Are you sure you want to order robotics book?") == true) {
+        		x = alert("Your order has been placed!");
+    		} else {
+       			x = alert("Your order has been Cancelled!");
+    		}
+		}
+		
+		function OrderOne() {
+   			var x;
+    		if (confirm("Are you sure you want to order communications book?") == true) {
+        		x = alert("Your order has been placed!");
+    		} else {
+       			x = alert("Your order has been Cancelled!");
+    		}
+		}
+		
+		function OrderTwo() {
+   			var x;
+    		if (confirm("Are you sure you want to order Rahul Dravid's Autobiography?") == true) {
+        		x = alert("Your order has been placed!");
+    		} else {
+       			x = alert("Your order has been Cancelled!");
+    		}
+		}
+		
+		function Register() {
+   			var x;
+    		if (confirm("Are you sure you want to book tickets for this event?") == true) {
+        		x = alert("Tickets confirmed!");
+    		} else {
+       			x = alert("Tickets Cancelled!");
+    		}
+		}
+		
+		function RegisterOne() {
+   			var x;
+    		if (confirm("Are you sure you want to book tickets for this event?") == true) {
+        		x = alert("Tickets confirmed!");
+    		} else {
+       			x = alert("Tickets Cancelled!");
+    		}
+		}
+		
+		function RegisterTwo() {
+   			var x;
+    		if (confirm("Are you sure you want to book tickets for this event?") == true) {
+        		x = alert("Tickets confirmed!");
+    		} else {
+       			x = alert("Tickets Cancelled!");
+    		}
+		}
+		
+		var myVar = setInterval(myTimer, 1000);
+			function myTimer() {
+    			var d = new Date();
+    			document.getElementById("time").innerHTML = d.toLocaleTimeString();
+		}
+			
+		$(document).ready(function(){
+       			$("#time").animate({
+            		opacity: '0.5',
+            		height: '50px',
+            		width: '200px'
+   		 		});
+		});	
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  	<div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="firstpage.html">Home page</a></li>
+        <li class="active"><a href="eventlist.html">List Of Events <span class="sr-only">(current)</span></a></li>
+        <li><a href="forum.html">Forums</a></li>
+        <li><a href="podcast.html">Podcasts</a></li>
+        <li><a href="search.html">Database Search</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
+ 	</div><!-- /.container-fluid -->
+	</nav>
+	<section class="container">
+    	<div class="row">
+			<div class="col-sm-12 text-center">
+				<div id = "eventlist">
+				<p class = "enter" id = "time"></p>
+					<h3 class = "sublist">LIST OF UPCOMING EVENTS</h3>
+						
+							
+						<figure class = "popout">
+							<img class = "imglst" src="media/9781420059090.jpg" alt="Robotics">
+						</figure>
+						<section class = "space">Practical and Experimental ROBOTICS</section>
+						<div class = "space">Author- Sahin, Kachroo</div>
+						<div class = "space">Maddison Square Garden</div>
+						<div class = "space">220, JS, Cleveroad</div>
+						<div class = "space">Thursday, Nov 5, 2016</div>
+						<div class = "space">Entry Fee: $20/-</div>
+						<div class = "space">From 2:00Pm - 5:00PM</div>
+						<div class = "space">
+						<div class="btn-group" role="group" aria-label="...">
+  										<button onclick="Order()" class="enter" type="button">Order</button>
+										<button onclick="Register()" class="cancel" type="button">Register</button>
+					
+			</div>
+									<p>
+									<figure class = "popout">
+										<img class = "imglst" src="media/electronic-communication-systems-by-kennedy-1-638.jpg" alt="electronic communication systems">
+									</figure>
+									<section class = "space">Electronics Communication Systems</section>
+									<div class = "space">Author- Kennedy, Davis</div>
+									<div class = "space">240, John Street, Batimore</div>
+									<div class = "space">Thursday, Nov 10, 2016</div>
+									<div class = "space">Entry Fee: $20/-</div>
+									<div class = "space">From 3:00Pm - 5:00PM</div>
+									<div class = "space">
+									<div class="btn-group" role="group" aria-label="...">
+ 												 <button onclick="OrderOne()" class="enter" type="button">Order</button>
+												 <button onclick="RegisterOne()" class="cancel" type="button">Register</button>
+								</div>
+							</div>
+							<p>
+										<figure class = "popout">
+											<img class = "imglst" src="media/rahul-dravid-book-timeless-steel-505067.jpg" alt="rahul dravid book timeless steel">
+										</figure>
+										<section class = "space">TimeLess Steel</section>
+										<div class = "space">Author- Disney, Cricinfo</div>
+										<div class = "space">Maddison Square Garden</div>
+										<div class = "space">220, JS, Cleveroad</div>
+										<div class = "space">Thursday, Nov 15, 2016</div>
+										<div class = "space">Entry Fee: $20/-</div>
+										<div class = "space">From 1:00Pm - 5:00PM</div>
+										<div class = "space">
+										<div class="btn-group" role="group" aria-label="...">
+  													<button onclick="OrderTwo()" class="enter" type="button">Order</button>
+												 	<button onclick="RegisterTwo()" class="cancel" type="button">Register</button>
+									</div>
+								</div>
+								<p>
+
+		</div>
+</div>
+</div>
+</div>
+<div class="container">
+    					<div class="row">
+							<div class="col-sm-12 text-center">
+								<footer class = "enter">
+									<!--#include file="footer.shtml"-->
+								</footer>
+							</div>
+						</div>
+			</div>
+</section>
+	<ul>
+		<li class="back"><a class = "backcolor" href="firstpage.html">Back</a></li>
+	</ul>
+</body>
+</html>

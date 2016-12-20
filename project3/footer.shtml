@@ -1,0 +1,4 @@
+ Time with date:  <!--#echo var="DATE_LOCAL"--><br>
+
+Last Updated date: <!--#config timefmt=" %B %d, %Y"--><br>
+ <!--#echo var="DATE_LOCAL"--><br>

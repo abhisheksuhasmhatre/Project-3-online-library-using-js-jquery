@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>First Page</title>
+	<link href= "js/bootstrap.css" rel="stylesheet" type="text/css"  media = "screen">
+	<link href= "css/style.css" rel="stylesheet" type="text/css"  media = "screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery-3.1.0.min.js"></script>
+	<script>
+		var modal = document.getElementById('cl');
+		window.onclick = function(event) {
+  		  if (event.target == mode) {
+   		     modal.style.display = "none";
+   		 }
+		}
+
+		var mode = document.getElementById('cla');
+		window.onclick = function(event) {
+		    if (event.target == mode) {
+  		      mode.style.display = "none";
+  		  }
+		}
+		
+		var myVar = setInterval(myTimer, 1000);
+			function myTimer() {
+    			var d = new Date();
+    			document.getElementById("time").innerHTML = d.toLocaleTimeString();
+		}
+			
+		$(document).ready(function(){
+       			$("#time").animate({
+            		opacity: '0.5',
+            		height: '50px',
+            		width: '200px'
+   		 		});
+		});	
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  	<div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="signup.html">Sign Up<span class="sr-only">(current)</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
+ 	</div><!-- /.container-fluid -->
+	</nav>
+	<!-- too much errors -->
+		<div id = "eventlist">
+		<p class = "enter" id = "time"></p>
+					<button onclick="document.getElementById('cl').style.display='block'"  class = "sublist">Sign Up using Facebook (Press here to Open)</button>
+		<div id="cl" class="mode">
+  			<div class="imgcontainer">
+  				<span onclick="document.getElementById('cl').style.display='none'" class="close" title="Close Modal">&times;</span>
+			</div>
+    		<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon1">@</span>
+ 			 <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+			</div>
+
+			<div class="input-group">
+			  <input type="text" class="form-control" placeholder="Recipient's ID" aria-describedby="basic-addon2">
+			  <span class="input-group-addon" id="basic-addon2">abc@example.com</span>
+			</div>
+			
+			<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon3">Password</span>
+ 			 <input type="password" class="form-control" placeholder="Password..." aria-describedby="basic-addon1">
+			</div>
+			
+			<form action = "https://www.facebook.com/">
+			<div class="btn-group" role="group" aria-label="...">
+			<div class="container">
+    							<div class="row">
+									<div class="col-sm-12 text-center">
+										<input type = "submit" class = "entersu" value = "Sign Up"/>
+										<button class="cancelsu" type="button">Cancel</button>
+ 									</div>
+ 								</div>
+ 							</div>
+			</div>
+			</form>
+		</div>
+		
+		<button onclick="document.getElementById('cla').style.display='block'"  class = "sublist">Sign Up using Gmail (Press here to Open)</button>
+		<div id="cla" class="mode">
+  			<div class="imgcontainer">
+  				<span onclick="document.getElementById('cla').style.display='none'" class="close" title="Close Modal">&times;</span>
+			</div>
+    		<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon4">@</span>
+ 			 <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+			</div>
+	
+			<div class="input-group">
+			  <input type="text" class="form-control" placeholder="Recipient's ID" aria-describedby="basic-addon2">
+			  <span class="input-group-addon" id="basic-addon5">abc@example.com</span>
+			</div>
+			
+			<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon6">Password</span>
+ 			 <input type="password" class="form-control" placeholder="Password..." aria-describedby="basic-addon1">
+			</div>
+			
+			<form action = "https://mail.google.com/">
+			<div class="btn-group" role="group" aria-label="...">
+  				<div class="container">
+    							<div class="row">
+									<div class="col-sm-12 text-center">
+  										<input type = "submit" class = "entersu" value = "Sign Up"/>
+										<button class="cancelsu" type="button">Cancel</button>
+ 									</div>
+ 								</div>
+ 							</div>
+			</div>
+			</form>
+		</div>
+			<button class = "sublist">Make an Account</button>
+			<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon7">First Name</span>
+ 			 <input type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
+			</div>
+			
+			<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon8">Middle Name</span>
+ 			 <input type="text" class="form-control" placeholder="Middle Name" aria-describedby="basic-addon1">
+			</div>
+			
+			<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon14">Surname</span>
+ 			 <input type="text" class="form-control" placeholder="Surname" aria-describedby="basic-addon1">
+			</div>
+			
+			<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon9">Age</span>
+ 			 <input type="number" class="form-control" placeholder="Age" aria-describedby="basic-addon1">
+			</div>
+			
+			<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon10">@</span>
+ 			 <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+			</div>
+			
+			<div class="input-group">
+			  <input type="text" class="form-control" placeholder="Recipient's ID" aria-describedby="basic-addon2">
+			  <span class="input-group-addon" id="basic-addon11">abc@example.com</span>
+			</div>
+			
+			<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon12">Password</span>
+ 			 <input type="text" class="form-control" placeholder="Password..." aria-describedby="basic-addon1">
+			</div>
+			
+			<div class="input-group">
+ 			 <span class="input-group-addon" id="basic-addon13">Re-enter Password</span>
+ 			 <input type="password" class="form-control" placeholder="Re-enter password..." aria-describedby="basic-addon1">
+			</div>
+			
+			<form action = "index.html">
+			<div class="btn-group" role="group" aria-label="...">
+  				<div class="container">
+    							<div class="row">
+									<div class="col-sm-12 text-center">
+  										<input type = "submit" class = "entersu" value = "Sign Up"/>
+										<button class="cancelsu" type="button">Cancel</button>
+ 									</div>
+ 								</div>
+ 				</div>
+			</div>
+			</form>
+	</div>
+	<div class="container">
+    					<div class="row">
+							<div class="col-sm-12 text-center">
+								<footer class = "enter">
+									<!--#include file="footer.shtml"-->
+								</footer>
+							</div>
+						</div>
+			</div>
+	<ul>
+		<li class="back"><a class = "backcolor" href="index.html">Back</a></li>
+	</ul>
+</body>
+</html>

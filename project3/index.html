@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Login Page</title>
+		<meta charset="utf-8">
+		<link href= "js/bootstrap.css" rel="stylesheet" type="text/css"  media = "screen">
+		<link href= "css/style.css" rel="stylesheet" type="text/css"  media = "screen">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="jquery-3.1.0.min.js"></script>
+	</head>
+	<body>
+	<div id = "indexsphere">
+		<script src="three.js-master/build/three.js"></script>
+		<script src="three.js-master/examples/js/renderers/Projector.js"></script>
+		<script src="three.js-master/examples/js/renderers/CanvasRenderer.js"></script>
+		<script>
+			var SCREEN_WIDTH = window.innerWidth,
+			SCREEN_HEIGHT = window.innerHeight,
+
+			mouseX = 0, mouseY = 0,
+
+			windowHalfX = window.innerWidth / 2,
+			windowHalfY = window.innerHeight / 2,
+
+			SEPARATION = 200,
+			AMOUNTX = 10,
+			AMOUNTY = 10,
+
+			camera, scene, renderer;
+
+			init();
+			animate();
+
+			function init() {
+				var container, separation = 100, amountX = 50, amountY = 50,
+				particles, particle;
+
+				container = document.createElement('div');
+				document.body.appendChild(container);
+
+				camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+				camera.position.z = 3780;
+
+				scene = new THREE.Scene();
+
+				renderer = new THREE.CanvasRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
+				container.appendChild( renderer.domElement );
+
+				// particles
+
+				var PI2 = Math.PI * 2;
+				var material = new THREE.SpriteCanvasMaterial( {
+					color: 0xffffff,
+					program: function ( context ) {
+						context.beginPath();
+						context.arc( 0, 0, 0.5, 0, PI2, true );
+						context.fill();
+					}
+				} );
+
+				for ( var i = 0; i < 1000; i ++ ) {
+					particle = new THREE.Sprite( material );
+					particle.position.x = Math.random() * 2 - 1;
+					particle.position.y = Math.random() * 2 - 1;
+					particle.position.z = Math.random() * 2 - 1;
+					particle.position.normalize();
+					particle.position.multiplyScalar( Math.random() * 10 + 450 );
+					particle.scale.multiplyScalar( 2 );
+					scene.add( particle );
+				}
+
+				// lines
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+			}
+			var $ = window.$;
+
+			var public_key = 'xRpV3GA0jVHMnoOnor2K';
+			function drawData()
+			{
+				$.ajax({
+					url: 'https://data.sparkfun.com/output/' + public_key + '.json',
+					data: {page: 1},
+					dataType: 'jsonp',
+				}).done(
+					function(results)
+					{
+						scene.children.length = 0;
+						time = [['TimeStamp', 'Moisture1', 'Moisture2']];
+						for(var i = 0; i < results.length; i++)
+						{
+							row = results[i];
+							var geometry = new THREE.Geometry();
+
+							var vertex = new THREE.Vector3( Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1 );
+							vertex.normalize();
+							vertex.multiplyScalar( 450 );
+
+							geometry.vertices.push( vertex );
+
+							var vertex2 = vertex.clone();
+							var vertex3 = vertex.clone();
+
+							vertex2.multiplyScalar( row.moisture1 / 100);
+							vertex3.multiplyScalar( row.moisture2 / 100);
+
+							geometry.vertices.push( vertex2 );
+							geometry.vertices.push( vertex3 );
+
+							var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x00ff00, opacity: Math.random() } ) );
+							var line2 = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x0000ff, opacity: Math.random() } ) );
+
+							scene.add( line );
+							scene.add( line2 );
+						}
+					window.setTimeout(drawData, 3000);
+					}
+				);
+			}
+			drawData();
+
+			function onWindowResize() {
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+
+			//
+
+			function onDocumentMouseMove(event) {
+				mouseX = event.clientX - windowHalfX;
+				mouseY = event.clientY - windowHalfY;
+			}
+
+			function onDocumentTouchStart( event ) {
+				if ( event.touches.length > 1 ) {
+					event.preventDefault();
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+				}
+			}
+
+			function onDocumentTouchMove( event ) {
+				if ( event.touches.length == 1 ) {
+					event.preventDefault();
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+				}
+			}
+
+			//
+
+			function animate() {
+				requestAnimationFrame( animate );
+				render();
+			}
+
+			function render() {
+				camera.position.x += ( mouseX - camera.position.x ) * .05;
+				camera.position.y += ( - mouseY + 200 - camera.position.y ) * .05;
+				camera.lookAt( scene.position );
+				renderer.render( scene, camera );
+			}
+		</script>
+	</div>
+	<figure>
+		<img class = "logo" src="media/online%20library.jpg" width="800" height="400" alt="online library">
+	</figure>
+		<nav class="topnav">
+  			<div class="container-fluid">    
+      			<ul class="nav navbar-nav">
+       				<li><a href="../index.html">Main Page</a></li>
+					<li><a class="active " href="index.html">Login Page</a></li>
+					<li><a href="https://people.rit.edu/~spbics/645-01.shtml" target ="_blank">Class list</a></li>
+      			</ul>
+     			<ul class="nav navbar-nav navbar-right">
+        			<li><a href="signup.html">Sign Up</a></li>
+      			</ul>
+ 			</div><!-- /.container-fluid -->
+		</nav>
+	
+	<div id = "details">
+		<div id = "detailslog">LogIn Details</div>
+    	<input id = "detailsus" type="text" placeholder="Enter Username" name="uname" required>
+    	<input id = "detailspass" type="password" placeholder="Enter Password" name="psw" required>
+    	<form action = "firstpage.html">
+    		<input type = "submit" id = "detailsbuttom" value = "Login"/>
+    	</form>
+    	<button id="cancelbutton" type="button">Cancel</button>
+    	<span  id="forget">Forgot <a href="index.html">password?</a></span>
+	</div>
+	</body>
+</html>
